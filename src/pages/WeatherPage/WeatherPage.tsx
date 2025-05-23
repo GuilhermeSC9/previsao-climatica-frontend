@@ -1,13 +1,17 @@
 import "./WeatherPage.css";
 import Header from "../../components/Header/Header"
 import type { Weather } from "../../models/Weather";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { api } from "../../lib/axios";
 import type { FavoriteCity } from "../../models/FavoriteCity";
 
 export default function WeatherPage() {
   const [favoriteCitiesData, setFavoriteCitiesData] = useState<Weather[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    getFavoriteCities();
+  }, [])
 
   async function getFavoriteCities() {
         //TODO: LIMPAR DADOS ANTERIORES DE CIDADES FAVORITAS
