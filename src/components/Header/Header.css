@@ -1,0 +1,21 @@
+.header{
+  margin: 50px 0;
+}
+
+.header-title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-text{
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.icon{
+  height: 70px;
+}
+
