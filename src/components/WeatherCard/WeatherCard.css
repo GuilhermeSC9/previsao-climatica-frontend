@@ -1,0 +1,46 @@
+.card{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 30%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.cardContent{
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cardContent h2{
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90%;
+}
+
+.favorite-icon{
+  font-size: 22px;
+  color: gray;
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  opacity: 0;
+  transition: opacity 0.3s, color 0.3s;
+}
+
+.card.hover .favorite-icon{
+  opacity: 1;
+}
+
+.favorite-icon.active{
+  color: gold;
+}
