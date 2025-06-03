@@ -37,7 +37,7 @@
   transition: opacity 0.3s, color 0.3s;
 }
 
-.card.hover .favorite-icon{
+.card:hover .favorite-icon{
   opacity: 1;
 }
 
