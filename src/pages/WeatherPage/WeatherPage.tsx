@@ -70,7 +70,7 @@ export default function WeatherPage() {
       <Header />
 
       <form action="#" className="formSearch" onSubmit={onSubmitSearch}>
-        <input type="text" className="inputSearch" value={cityToSearch} onChange={(e) => setCityToSearch(e.target.value)} placeholder="Digite o nome da cidade" />
+        <input type="text" className="inputSearch" value={cityToSearch} onChange={(e => setCityToSearch(e.target.value))} placeholder="Digite o nome da cidade" />
         <button className="buttonSearch" type="submit">
           Buscar
         </button>
