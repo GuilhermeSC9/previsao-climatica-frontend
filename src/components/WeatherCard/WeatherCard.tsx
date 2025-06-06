@@ -1,4 +1,4 @@
-import { format, set } from "date-fns";
+import { format } from "date-fns";
 import { useState } from "react";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import "./WeatherCard.css";
@@ -16,7 +16,7 @@ export default function WeatherCard({weather, refreshCard}: WeatherCardProps){
   async function toggleFavorite(){
     //TODO: VERIFICAR SE A CIDADE É FAVORITA, SE FOR, CHAMAR A API PARA REMOVER CIDADE DOS FAVORITOS. SE NÃO, ADICIONAR CIDADE AOS FAVORITOS
     if(isFavorited){
-      await api.delete(`/favoritecity/${weather.isFavorite}`)
+      await api.delete(`/favoritecity/${weather.favoriteCityId}`)
     } else{
       await api.post('/favoritecity', {
         "name": weather.location.name

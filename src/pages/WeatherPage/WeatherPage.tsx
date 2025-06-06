@@ -65,6 +65,11 @@ export default function WeatherPage() {
 
       setCityToSearch("");
     }
+
+    async function refreshCardSearch(){
+      getFavoriteCities();
+      setCityWeatherData(undefined);
+    }
   return (
     <div className="container">
       <Header />
@@ -77,10 +82,13 @@ export default function WeatherPage() {
       </form>
 
       {
-        cityWeatherData && <WeatherCard weather={cityWeatherData} refreshCard={() => {}} />
+        cityWeatherData && <WeatherCard weather={cityWeatherData} refreshCard={refreshCardSearch} />
       }
 
       <h2 className="favoriteCitiesTitle">Cidades Favoritas</h2>
+      <div className="favoriteCities">
+        { isLoading ? <p>Carregando cidade favoritas...</p> : favoriteCitiesData.length === 0 ? <p>Nenhuma cidade favorita encontrada</p> : favoriteCitiesData.map((item) => <WeatherCard key={item.location.name} weather={item} refreshCard={getFavoriteCities} />) }
+      </div>
     </div>
   )
 }
