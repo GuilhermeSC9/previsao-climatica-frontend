@@ -54,7 +54,7 @@ export default function WeatherPage() {
         }
     }
 
-    async function onSubmitSearch(e:any){
+    async function onSubmitSearch(e: React.FormEvent<HTMLFormElement>){
       e.preventDefault();
 
       const responseWeather = await getWeatherByCity(cityToSearch);
